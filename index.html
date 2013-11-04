@@ -6,10 +6,24 @@
   <link rel='stylesheet' href='https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css' />
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
   <script src='https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js'></script>
+  <script src="cordova.js"></script>
   <script>
+  document.addEventListener("deviceready", onDeviceReady, false);
+
+  // device APIs are available
+  //
+  function onDeviceReady() 
+  {
+    window.localStorage.setItem('lastStorageID', 'testdev');
+    alert(window.localStorage.getItem('lastStorageID'));
+  }
+
   function onOK()
   {
-    location.href = 'https://www.thestudiodirector.com/' + $('#studioID').val() + '/m.jsp';
+    var studioID = $('#studioID').val();
+
+    
+    location.href = 'https://www.thestudiodirector.com/' + studioID + '/m.jsp';
   }
   </script>
 <body>
