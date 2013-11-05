@@ -13,12 +13,13 @@
   MSD.onDeviceReady = function()
   {
     $('#okButton').button("enable");
-    MSD.addListOfIDs();
+    MSD.updateListOfIDs();
   }
   
-  MSD.addListOfIDs = function()
+  MSD.updateListOfIDs = function()
   {
     var list = MSD.getIDs();
+    var html = '';
 
     if (list != null && list.length > 0)
     {
@@ -26,12 +27,13 @@
 
       for (var i = 0; i < list.length; i++)
       {
-        html += '<li><a href="https://www.thestudiodirector.com/' + list[i] + '/m.jsp">' + list[i] + '</a><a href="javascript:MSD.removeID(\'' + list[i] + '\')" data-icon="delete" data-iconpos="notext"></a></li>';
+        html += '<li><a href="javascript:MSD.gotoStudio(\'' + list[i] + '\')">' + list[i] + '</a><a href="javascript:MSD.removeID(\'' + list[i] + '\')" data-icon="delete" data-iconpos="notext"></a></li>';
       }
 
       html += '</ul>';
-      $('#prevEntered').html(html).trigger('create');
     }
+
+    $('#prevEntered').html(html).trigger('create');
   }
 
   MSD.removeID = function(studioID)
@@ -61,6 +63,8 @@
     {
       window.localStorage.removeItem('studioIDs');
     }
+
+    MSD.updateListOfIDs();
   }
 
   MSD.getIDs = function()
@@ -90,6 +94,8 @@
         window.localStorage.setItem('studioIDs', studioID + ',' + list);
       }
     }
+
+    MSD.updateListOfIDs();
   }
 
   MSD.isInList = function(studioID, list)
@@ -121,14 +127,18 @@
     if (MSD.isValidID(studioID))
     {
       MSD.saveID(studioID);
-      var url = 'https://www.thestudiodirector.com/' + studioID + '/m.jsp';
-      //location.href = 'https://www.thestudiodirector.com/' + studioID + '/m.jsp';
-      window.open(url, '_system', 'location=yes');
+      MSD.gotoStudio(studioID);
     }
     else
     {
       alert('You must enter a valid studio ID.');
     }
+  }
+
+  MSD.gotoStudio = function(studioID)
+  {
+    var url = 'https://www.thestudiodirector.com/' + studioID + '/m.jsp';
+    window.open(url, '_system', 'location=yes');
   }
 
   MSD.isValidID = function(studioID)
@@ -143,7 +153,7 @@
 
 <div data-role='page'>
   <div data-role='content'>
-    Please enter your Studio ID. You can find this ID by logging into the full site, clicking on the admin tab, ...
+    Please enter your Studio ID. You can find this ID by logging into the full site, clicking on the Admin tab, Studio Information section, Mobile App Info. 
     <input type='text' id='studioID'>
     <button type='button' id='okButton' onclick='MSD.onOK()' disabled='true'>OK</button>
     <div id='prevEntered'></div>
