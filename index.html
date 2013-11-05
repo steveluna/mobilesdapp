@@ -22,7 +22,7 @@
 
     if (list != null && list.length > 0)
     {
-      var html = 'Or, pick one of the following previously entered studio IDs:<ul data-role="listview">';
+      var html = '<p>Or, pick one of the following previously entered studio IDs:</p><ul data-role="listview">';
 
       for (var i = 0; i < list.length; i++)
       {
@@ -44,9 +44,22 @@
       list.splice(index, 1);
     }
 
-    for (var i = 0; i < list.length; i++)
+    if (list.length > 0)
     {
-      alert(list[i]);
+      var studioIDs = '';
+      for (var i = 0; i < list.length; i++)
+      {
+        if (i > 0)
+        {
+          studioIDs += ',';
+        }
+        studioIDs += list[i];
+      }
+      window.localStorage.setItem('studioIDs', studioIDs);
+    }
+    else
+    {
+      window.localStorage.removeItem('studioIDs');
     }
   }
 
