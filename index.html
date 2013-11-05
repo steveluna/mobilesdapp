@@ -121,7 +121,9 @@
     if (MSD.isValidID(studioID))
     {
       MSD.saveID(studioID);
-      location.href = 'https://www.thestudiodirector.com/' + studioID + '/m.jsp';
+      var url = 'https://www.thestudiodirector.com/' + studioID + '/m.jsp';
+      //location.href = 'https://www.thestudiodirector.com/' + studioID + '/m.jsp';
+      window.open(url, '_blank', 'location=yes');
     }
     else
     {
