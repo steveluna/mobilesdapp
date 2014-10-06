@@ -4,7 +4,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.thestudiodirector.m"
-        version = "1.0.0">
+        version = "1.0.1">
 
     <name>The Studio Director</name>
 
@@ -21,7 +21,6 @@ Enable individual API permissions here.
 The "device" permission is required for the 'deviceready' event.
 -->
     <feature name="http://api.phonegap.com/1.0/device" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
 
     <!--
 If you do not want any permissions to be added to your app, add the
