@@ -1,0 +1,19 @@
+Steve used PhoneGap Build to build the .apk for our Android mobile app. To use PhoneGap Build, you must upload the source to a github repository, and then you can link your PhoneGap Build account to your github repository. So, Steve has two remote repositories (bitbucket and github). A second remote repository can be added as:
+
+git remote set-url origin --push --add https://github.com/steveluna/mobilesdapp.git
+
+Another developer could use their own github respository, and their own PhoneGap Build account. It is also possible to use PhoneGap Desktop, in which case, it shouldn't be necessary to have a second github remote repository.
+
+This was Steve's process using the github account:
+
+1. To log into phonegap:
+
+1.1 Go to https://build.phonegap.com
+1.2 Use stevel@thestudiodirector.com as the login, and the password from the "Adobe ID" keepass entry
+
+The phonegap account should already be linked to the github account, so that it can pull the latest code. For the github login, see the github keepass entry. If you need to update the code, use git to update github, and then use the phonegap update code button.
+
+2. When building the phonegap app, it will ask for iOS and Android certificates. iOS doesn't matter because Apple didn't approve our app, but for the Android one, see GooglePlay/README.keystore. The same password can be used for both the certificate password and the keystore password.
+
+3. Download the .apk and go to the play.google.com account. It is under the stevestudiodir@gmail.com login. Click on The Studio Director application, click on the APK tab, click upload new APK to Production, ...
+
