@@ -22,7 +22,8 @@ The "device" permission is required for the 'deviceready' event.
 -->
     <feature name="http://api.phonegap.com/1.0/device" />
     <!-- this is required to make window.open(..., 'system') open in the default browser instead of the cordova app window -->
-    <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
+    <!--<gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />-->
+    <plugin name="cordova-plugin-inappbrowser" />
 
     <!--
 If you do not want any permissions to be added to your app, add the
