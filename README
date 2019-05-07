@@ -15,5 +15,5 @@ The phonegap account should already be linked to the github account, so that it 
 
 2. When building the phonegap app, it will ask for iOS and Android certificates. iOS doesn't matter because Apple didn't approve our app, but for the Android one, see GooglePlay/README.keystore. The same password can be used for both the certificate password and the keystore password.
 
-3. Download the .apk and go to the play.google.com account. It is under the stevestudiodir@gmail.com login. Click on The Studio Director application, click on the APK tab, click upload new APK to Production, ...
+3. Download the .apk and go to the https://play.google.com/apps/publish account. It is under the stevestudiodir@gmail.com login. Click on The Studio Director application, click on the APK tab, click upload new APK to Production, ...
 

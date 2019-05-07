@@ -25,6 +25,8 @@ The "device" permission is required for the 'deviceready' event.
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />-->
     <plugin name="cordova-plugin-inappbrowser" />
 
+    <preference name="android-minSdkVersion" value="28" />
+    
     <!--
 If you do not want any permissions to be added to your app, add the
 following tag to your config.xml; you will still have the INTERNET
