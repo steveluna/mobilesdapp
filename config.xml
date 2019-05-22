@@ -4,7 +4,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.thestudiodirector.m"
-        version = "1.0.4">
+        version = "1.0.5">
 
     <name>The Studio Director</name>
 
@@ -25,7 +25,7 @@ The "device" permission is required for the 'deviceready' event.
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />-->
     <plugin name="cordova-plugin-inappbrowser" />
 
-    <preference name="android-minSdkVersion" value="26" />
+    <preference name="android-minSdkVersion" value="22" />
     
     <!--
 If you do not want any permissions to be added to your app, add the
